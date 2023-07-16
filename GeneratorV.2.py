@@ -5,7 +5,7 @@ UserInput = ''
 
 def encode():
     global txt, secret
-    txt = str(input('Enter your words to encode, Please note to start with a space'))
+    txt = str(input('Enter your words to encode'))
     secret = ''
     for i in txt:
         secret += chr(ord(i) + 2)
@@ -15,7 +15,7 @@ def encode():
 
 def decode():
     global txt, secret
-    txt = str(input('Enter your words to decode, Please note to start with a space'))
+    txt = str(input('Enter your words to decode'))
     secret = ''
     for y in txt:
         secret += chr(ord(y) - 2)
