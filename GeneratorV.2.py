@@ -1,6 +1,13 @@
+import random
 txt = ''
 secret = ''
 UserInput = ''
+enc = 0
+
+
+def encrypt():
+    global enc
+    enc = random.randint(2, 50)
 
 
 def encode():
@@ -8,7 +15,7 @@ def encode():
     txt = str(input('Enter your words to encode'))
     secret = ''
     for i in txt:
-        secret += chr(ord(i) + 2)
+        secret += chr(ord(i) + enc)
     print(secret)
     ask()
 
@@ -18,7 +25,7 @@ def decode():
     txt = str(input('Enter your words to decode'))
     secret = ''
     for y in txt:
-        secret += chr(ord(y) - 2)
+        secret += chr(ord(y) - enc)
     print(secret)
     ask()
 
@@ -29,6 +36,7 @@ def ask():
     if UserInput == 'decode':
         decode()
     elif UserInput == 'encode':
+        encrypt()
         encode()
     else:
         print('Invalid input, please try again')
